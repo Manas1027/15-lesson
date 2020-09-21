@@ -5,12 +5,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item.view.*
 
-class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    val tvTitle: TextView = itemView.tvTitle
-    val tvDescription: TextView = itemView.tvDescription
+class ViewHolder(obyekt: View): RecyclerView.ViewHolder(obyekt) {
+    private val tvTitle: TextView = itemView.ati
+    private val tvDescription: TextView = itemView.familiyasi
 
-    fun populateModel(user: User){
-        tvTitle.text = user.title
-        tvDescription.text = user.description
+    fun populateModel(mmm: User, activity: MainActivity){
+        tvTitle.text = mmm.name1
+        tvDescription.text = mmm.name2
+        itemView.setOnClickListener{
+            activity.onItemClicked(mmm)
+        }
     }
 }

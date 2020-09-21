@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class ListAdapter: RecyclerView.Adapter<ViewHolder>() {
+class ListAdapter(val activity: MainActivity): RecyclerView.Adapter<ViewHolder>() {
 
     var models: List<User> = listOf()
 
@@ -25,6 +25,6 @@ class ListAdapter: RecyclerView.Adapter<ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.populateModel(models[position])
+        holder.populateModel(models[position], activity)
     }
 }
